@@ -20,7 +20,7 @@ def get_connection():
         user=st.secrets["db_user"],
         password=st.secrets["db_password"],
         database=st.secrets["db_name"],
-        port=st.secrets.get["db_port",13734]
+        port=st.secrets["db_port"]
     )
 
 def execute_query(query, params=None, fetch=True):
