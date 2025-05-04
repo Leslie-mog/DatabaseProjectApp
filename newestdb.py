@@ -16,11 +16,11 @@ st.set_page_config(
 
 def get_connection():
     return mysql.connector.connect(
-        host=st.secrets["hopper.proxy.rlwy.net"],
-        user=st.secrets["root"],
-        password=st.secrets["vMHbTeQprGSHYsklwTXAefCfMVnCcSWr"],
-        database=st.secrets["railway"],
-        port=st.secrets["13734"]
+        host=st.secrets["db_host"],
+        user=st.secrets["db_user"],
+        password=st.secrets["db_password"],
+        database=st.secrets["db_name"],
+        port=st.secrets.get["db_port",13734]
     )
 
 def execute_query(query, params=None, fetch=True):
